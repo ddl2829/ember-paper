@@ -53,6 +53,11 @@ export default Component.extend({
     // Make the items closest to the trigger have the highest z-index
     let zIndex = (items.length - index) + startZIndex;
 
+    if(index < 4) {
+      opacity = 1;
+      transform = 'scale(1)';
+    }
+
     return htmlSafe(`opacity: ${opacity}; transform: ${transform}; transition-delay: ${transitionDelay}; z-index: ${zIndex};`);
   },
 
